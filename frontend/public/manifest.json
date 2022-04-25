@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Doogle",
+  "name": "Doogle, the simple search engine for dogs",
   "icons": [
     {
       "src": "favicon.ico",

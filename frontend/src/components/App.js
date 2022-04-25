@@ -6,6 +6,7 @@ import ResultAreaRouter from "./SearchResult";
 import { makeURLFriendly } from '../utils/StringFormatter';
 import { ResultState } from './SearchResult';
 import { APIPaths, fetchData } from '../utils/APIFetch';
+import { Helmet } from 'react-helmet';
 
 const SearchArea = (props) => {
 
@@ -77,6 +78,13 @@ const App = () => {
 
   return (
     <div className="flex flex-col h-screen">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Doogle</title>
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <meta name="description" content="Simple search engine solely for dog photos and activities" />
+      </Helmet>
+
       <Header />
       
       <div className="flex justify-center">

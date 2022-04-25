@@ -10,7 +10,15 @@ I had lots of fun working on this assignment, and look forward to hearing back!
 - supertest: The testing library used for testing the backend.
 
 ## Starting it up! (READ ME!!!)
-First step is to create a production build of the React app.
+For convenience sake, I've added a bash script called 'run.sh' which will successfully deploy both the frontend
+and backend.
+```sh
+sh run.sh
+```
+
+If for some reason this automated script fails, follow the instructions below:<br>
+
+First step is to create a production build of the React app.<br>
 Starting from the project's root:
 ```sh
 cd frontend
@@ -18,15 +26,15 @@ npm install
 npm run build .
 ```
 
-Once the build has completed, the koa backend will serve the rest.
+Once the build has completed, the koa backend will serve the rest.<br>
 Starting from the project's root:
 ```sh
 npm install
 node index.js
 ```
 
-React should automatically launch the app in a new tab of your default browser.
-(If for some reason this fails, the app is hosted on http://localhost:3000)
+The site and API should now be live on http://localhost:3011<br>
+The site lives on http://localhost:3011/ and api on http://localhost:3011/api/
 
 ### Testing library
 I use mocha for running test.js. You'll need to install this and then run the test script
