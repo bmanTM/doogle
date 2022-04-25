@@ -1,5 +1,34 @@
-# dogs
+# Doogle
+Doogle is first dog centric search engine that provides awesome dog photos based on breed. Additionally, it suggests fun activities for you to do as you clearly must be a little bored if you're looking up random dog photos on the internet.
 
+I had lots of fun working on this assignment, and look forward to hearing back!
+
+## Technologies/Concepts used (in no particular order)
+- React: I utilized React for the front end of this web application. I enjoy the ability to concentrate all portions of web design and development inside one language and file type. I'm quite comfortable working with JSX and React components + state changing and event handling.
+- TailwindCSS: I used TailwindCSS for styling components on the frontend. Unlike CSS frameworks like Bootstrap, Tailwind's functional classes allow me to quickly design a fairly comprehensive UI.
+- Websockets: Although not necessary, I utilized koa-websocket to create a websocket address the application connects to for sending real time recommendations as the user types into the search bar. 
+
+## Starting it up! (READ ME!!!)
+First step is to startup the backend node server:
+Nothing here has changed from the original guide.
+```sh
+npm install
+node index.js
+```
+
+Once the backend server is up, you'll need to launch the frontend react app.
+```sh
+cd frontend
+npm install
+npm start .
+```
+
+React should automatically launch the app in a new tab of your default browser.
+(If for some reason this fails, the app is hosted on http://localhost:3000)
+
+
+
+# FROM ORIGINAL README.md
 This is the starter code for a [Node.js](https://nodejs.org/en/about/) server
 using the [Koa web framework](https://koajs.com/). There a web page in
 `/public` which should be served to the user.
@@ -12,8 +41,6 @@ For best results, use [**Node.js >= 16**](https://nodejs.org/).
 
 
 
-
-# FROM ORIGINAL README.md
 You can check your current version of Node.js like this:
 
 ```sh
