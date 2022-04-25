@@ -7,8 +7,14 @@ import settings from './config.js';
 import predictFromDB from './suggestions.js';
 import initializeWS from './websockets.js';
 import websockify from 'koa-websocket';
+import serve from 'koa-static';
+import mount from 'koa-mount';
 
 /* Object definitions */
+
+/*
+	Object structure for cacheing an external dataset. This object will update itself every refreshTime minutes
+*/
 class APICache {
 	constructor(dataPath, refreshTime) {
 		this.data = null;
@@ -30,7 +36,22 @@ class APICache {
 	}
 
 	/*
-		Recursively iterates over data structure
+		Recursively iterates over data structure.
+		Route of data follows sequential data structure routing. AKA, ['parent', ... 'child'].
+		In other words, isValid() returns true if the data object is navigatable following the order of 
+		keys provided in dataRoute.
+		{
+			'parent': {
+				... ['child']
+			}
+		}
+
+		or 
+		{
+			'parent': {
+				... 'child': val
+			}
+		}
 	*/
 	isValid(dataRoute, pos) {
 		let element = dataRoute;
@@ -65,6 +86,10 @@ const app = websockify(new Koa());
 const router = new Router();
 const dogBreedCache = new APICache(settings.dogAPI.apiAll, settings.dogAPI.refreshTime)
 initializeWS(app, dogBreedCache);
+//Serve frontend:
+const frontEndPages = new Koa();
+frontEndPages.use(serve("./frontend/build"));
+app.use(mount("/", frontEndPages));
 
 /* Functions */
 async function fetchResponse(jsonPath) {
@@ -79,6 +104,9 @@ async function fetchResponse(jsonPath) {
 	return response;
 }
 
+/*
+	Cached in memory, dataset is small in size.
+*/
 async function cacheJson(jsonPath){
 	const json = await fetchResponse(jsonPath)
 		.then(function(response) {
@@ -88,6 +116,10 @@ async function cacheJson(jsonPath){
 	return json;
 }
 
+/*
+	takes a breed and (if provided) sub-breed and returns a random image of this specified dog 
+	(if breed is valid in DogAPI's list of all breeds, cached locally)
+*/
 async function getRanDogImage(ctx) {
 	const breedRoute = [ctx.params.breed, ...(ctx.params.subbreed !== undefined ? [ctx.params.subbreed] : [])];
 
@@ -96,11 +128,24 @@ async function getRanDogImage(ctx) {
 	} else {
 		const dogAPIpath = `${settings.dogAPI.apiRoot}/breed/${breedRoute.join('/')}/images/random`;
 		console.log(dogAPIpath);
-		const imageFetch = await cacheJson(dogAPIpath);
-		ctx.body = imageFetch;
+		try {
+			const imageFetch = await cacheJson(dogAPIpath);
+			ctx.body = imageFetch;
+		} catch (e) {
+			ctx.status=404;
+		}
 	}
 }
 
+/*
+	Function for redirecting a search query (I.E "terrier american") into its associated
+	getRanDogImage breed and subbreed route. If no match is found, a status of 400 is returned
+	with a suggestion set of 10 closest available options to your query.
+
+	Note: order of query is not important, its looking for the existence of breed and subbreed in
+	query, not necessarily which comes first. Aka 'terrier american' and 'american terrier' will
+	return same result.
+*/
 function dogQueryRedirect(ctx) {
 	let query = ctx.params.query;
 
@@ -211,3 +256,5 @@ app.use(router.routes());
 app.listen(settings.port, () => {
 	console.log(`Server running on http://localhost:${settings.port}`);
 });
+
+export default app;

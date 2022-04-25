@@ -31,7 +31,15 @@ function computeRelativityScore(inString, refString) {
 }
 
 /*
-    Takes dog cache, and predicts from db
+    Takes dog API cache and a submission value, and computes a result set of size numPredictions
+    containing predictions of what the submission value might be closest to.
+
+    Order of priority:
+    - computeRelativityScore result ranks predictions, higher score = closer to index=0 of returned list.
+    - If two predictions have the same score, the predicted string with smaller length takes precedent
+        - ex: If submission = 'ter', both 'terrier' and 'terrier ...sub-breed' will have same relativity score;
+              however, in our resulting predictions list 'terrier' will come before 'terrier ...sub-breed' as
+              the general breed should take priority.
 */
 function predictFromDB ( submission, db, numPredictions ) {
     const highestMatches = []; /* {predictedWord: val, accuracy: float} */

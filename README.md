@@ -9,24 +9,31 @@ I had lots of fun working on this assignment, and look forward to hearing back!
 - Websockets: Although not necessary, I utilized koa-websocket to create a websocket address the application connects to for sending real time recommendations as the user types into the search bar. 
 
 ## Starting it up! (READ ME!!!)
-First step is to startup the backend node server:
-Nothing here has changed from the original guide.
+First step is to create a production build of the React app.
+Starting from the project's root:
+```sh
+cd frontend
+npm install
+npm run build .
+```
+
+Once the build has completed, the koa backend will serve the rest.
+Starting from the project's root:
 ```sh
 npm install
 node index.js
 ```
 
-Once the backend server is up, you'll need to launch the frontend react app.
-```sh
-cd frontend
-npm install
-npm start .
-```
-
 React should automatically launch the app in a new tab of your default browser.
 (If for some reason this fails, the app is hosted on http://localhost:3000)
 
-
+### Testing library
+I use mocha for running test.js. You'll need to install this and then run the test script
+specifically through mocha.
+```sh
+npm install mocha -g
+mocha test.js
+```
 
 # FROM ORIGINAL README.md
 This is the starter code for a [Node.js](https://nodejs.org/en/about/) server
