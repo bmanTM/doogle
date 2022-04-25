@@ -6,7 +6,8 @@ I had lots of fun working on this assignment, and look forward to hearing back!
 ## Technologies/Concepts used (in no particular order)
 - React: I utilized React for the front end of this web application. I enjoy the ability to concentrate all portions of web design and development inside one language and file type. I'm quite comfortable working with JSX and React components + state changing and event handling.
 - TailwindCSS: I used TailwindCSS for styling components on the frontend. Unlike CSS frameworks like Bootstrap, Tailwind's functional classes allow me to quickly design a fairly comprehensive UI.
-- Websockets: Although not necessary, I utilized koa-websocket to create a websocket address the application connects to for sending real time recommendations as the user types into the search bar. 
+- Websockets: Although not necessary, I utilized koa-websocket to create a websocket address the application connects to for sending real time recommendations as the user types into the search bar.
+- supertest: The testing library used for testing the backend.
 
 ## Starting it up! (READ ME!!!)
 First step is to create a production build of the React app.

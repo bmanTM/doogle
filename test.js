@@ -10,6 +10,18 @@ describe('Backend Test', function() {
         server.close();
     });
 
+    describe('Testing site served at root', function() {
+        it('should receive html', function(done) {
+            request
+            .get('/')
+            .expect('Content-Type', /html/)
+            .expect(200, function(err) {
+                if (err) return done(err);
+                return done();
+            });
+        });
+    });
+
     describe('Testing DogAPI image fetch for /breed/subbreed', function() {
         it('should receive image url', function(done) {
             request
@@ -23,7 +35,7 @@ describe('Backend Test', function() {
             });
         });
 
-        it('should return 404 for invalid url', function(done) {
+        it('should receive 404 for invalid url', function(done) {
             request
             .get('/api/dog/terrior/american')
             .expect('Content-Type', /text/)
