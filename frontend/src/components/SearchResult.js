@@ -35,10 +35,10 @@ const ResultBox = ({imageSRC, children, allowCopy, backgroundEffect }) => {
     }
 
     return (
-        <div className="w-full max-w-2xl mx-4 bg-gray-100 flex rounded-3xl drop-shadow-xl overflow-hidden">
-            <div className="w-1/2 flex flex-col">
+        <div className="w-full sm:max-w-2xl mx-4 bg-gray-100 flex rounded-3xl drop-shadow-xl overflow-hidden flex-col sm:flex-row">
+            <div className="sm:w-1/2 flex flex-col">
                 <div className="flex-grow grid place-items-center bg-blend-hue" style={imageBGStyle()}>
-                    <div className="relative w-full">
+                    <div className="relative w-full sm:max-w-none max-w-[50%]">
                         <div className='flex items-center overflow-hidden'>
                             <img alt="" src={imageSRC} className="w-full"></img>
                         </div>
@@ -48,7 +48,7 @@ const ResultBox = ({imageSRC, children, allowCopy, backgroundEffect }) => {
                     </div>
                 </div>
             </div>
-            <div className='px-2 w-1/2'>
+            <div className='sm:px-2 w-full sm:w-1/2 flex flex-col justify-center'>
                 {children}
             </div>
         </div>
