@@ -11,7 +11,6 @@ I had lots of fun working on this assignment, and look forward to hearing back!
 
 ## Starting it up! (READ ME!!!)
 For convenience sake, I've added a bash script called 'run.sh' which will run through the build and deploy process.
-and backend.
 ```sh
 sh run.sh
 ```
