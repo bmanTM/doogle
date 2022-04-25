@@ -1,6 +1,6 @@
 # Doogle
-Doogle is first dog centric search engine that provides awesome dog photos based on breed. Additionally, it suggests fun activities for you to do as you clearly must be a little bored if you're looking up random dog photos on the internet.
-
+Doogle is the first dog centric search engine that provides random dog photos based on breed. Additionally, it suggests fun activities for you to do as you clearly must be a little bored if you're looking up random dog photos on the internet.
+<br>
 I had lots of fun working on this assignment, and look forward to hearing back!
 
 ## Technologies/Concepts used (in no particular order)
@@ -37,7 +37,7 @@ The site and API should now be live on http://localhost:3011<br>
 The site lives on http://localhost:3011/ and api on http://localhost:3011/api/
 
 ### Testing library
-I use mocha for running test.js. You'll need to install this and then run the test script
+I use mocha for running test.js. You'll need to install this module and then run the test script
 specifically through mocha.
 ```sh
 npm install mocha -g
