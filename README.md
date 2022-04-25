@@ -10,11 +10,12 @@ I had lots of fun working on this assignment, and look forward to hearing back!
 - supertest: The testing library used for testing the backend.
 
 ## Starting it up! (READ ME!!!)
-For convenience sake, I've added a bash script called 'run.sh' which will successfully deploy both the frontend
+For convenience sake, I've added a bash script called 'run.sh' which will run through the build and deploy process.
 and backend.
 ```sh
 sh run.sh
 ```
+Afterwards, the site should be live on http://localhost:3011/
 
 If for some reason this automated script fails, follow the instructions below:<br>
 
