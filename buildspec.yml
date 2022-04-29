@@ -20,5 +20,6 @@ artifacts:
     - frontend/public/*
     - frontend/node_modules/*
     - node_modules/*
-    - index.js
+    - *.js
     - package.json
+    - **/package.json
