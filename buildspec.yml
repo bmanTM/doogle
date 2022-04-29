@@ -20,6 +20,7 @@ artifacts:
     - frontend/public/*
     - frontend/node_modules/*
     - node_modules/*
+    - frontend/build
     - ./*.js
     - package.json
     - ./*/package.json
