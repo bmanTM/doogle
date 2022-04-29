@@ -22,4 +22,4 @@ artifacts:
     - node_modules/*
     - *.js
     - package.json
-    - **/package.json
+    - */package.json
