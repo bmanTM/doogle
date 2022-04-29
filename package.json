@@ -3,6 +3,9 @@
 	"version": "0.2.0",
 	"main": "index.js",
 	"type": "module",
+	"scripts": {
+		"start": node index.js
+	}
 	"dependencies": {
 		"@koa/cors": "^3.1.0",
 		"@koa/router": "^10.0.0",
