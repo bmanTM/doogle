@@ -40,7 +40,7 @@ const Suggestions = ({ visible, suggestions, onSelect }) => {
 }
 
 const SearchBar = ({ onSubmit, placeholder, searchVal, setSearchVal }) => {
-    const [wsClient, setWSClient] = useState(W3CWebSocket('ws://doogle-env.eba-ugdmui76.us-east-2.elasticbeanstalk.com:3011/api/ws/suggestions/dog', 'echo-protocol'));
+    const [wsClient, setWSClient] = useState(W3CWebSocket('ws://doogle-env.eba-ugdmui76.us-east-2.elasticbeanstalk.com/api/ws/suggestions/dog', 'echo-protocol'));
     const [suggestionsActive, setSuggestionsActive] = useState(false);
     const [suggestions, setSuggestions] = useState(undefined);
     
