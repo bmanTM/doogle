@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 const APIPaths = {
-    DOG: "http://localhost:3011/api/redirect/dog",
-    BORED: "http://localhost:3011/api/activity/random",
+    DOG: `http://localhost:${process.env.PORT}/api/redirect/dog`,
+    BORED: `http://localhost:${process.env.PORT}/api/activity/random`,
 }
 
 async function fetchData(apiPath, query) {
