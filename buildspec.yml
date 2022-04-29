@@ -21,6 +21,7 @@ artifacts:
     - frontend/node_modules/*
     - node_modules/*
     - frontend/build/*
+    - frontend/build/**/*
     - ./*.js
     - package.json
     - ./*/package.json
