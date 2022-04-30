@@ -18,10 +18,13 @@ phases:
 artifacts:
   files:
     - frontend/public/*
+    - frontend/public/**/*
     - frontend/node_modules/*
+    - frontend/node_modules/**/*
     - node_modules/*
-    - frontend/build/*
+    - node_modules/**/*
     - frontend/build/**/*
+    - frontend/build/*
     - ./*.js
     - package.json
     - ./*/package.json
