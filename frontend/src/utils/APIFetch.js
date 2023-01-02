@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 const APIPaths = {
-    DOG: `http://doogle-env.eba-ugdmui76.us-east-2.elasticbeanstalk.com/api/redirect/dog`,
-    BORED: `http://doogle-env.eba-ugdmui76.us-east-2.elasticbeanstalk.com/api/activity/random`,
+    DOG: `http://localhost:3011/api/redirect/dog`,
+    BORED: `http://localhost:3011/api/activity/random`,
 }
 
 async function fetchData(apiPath, query) {
