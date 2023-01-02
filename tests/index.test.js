@@ -1,5 +1,5 @@
 import 'should';
-import app from './index.js';
+import app from '../index.js';
 import supertest from 'supertest';
 
 const server = app.listen();

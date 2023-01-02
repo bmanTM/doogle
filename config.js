@@ -1,5 +1,5 @@
 const settings = {
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 3011,
     wsPort: 3010,
     apiRoute: "/api",
     dogAPI: {

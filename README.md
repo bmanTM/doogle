@@ -44,6 +44,11 @@ npm install mocha -g
 mocha test.js
 ```
 
+Or you can use the npm command:
+```sh
+npm run test
+```
+
 # FROM ORIGINAL README.md
 This is the starter code for a [Node.js](https://nodejs.org/en/about/) server
 using the [Koa web framework](https://koajs.com/). There a web page in
