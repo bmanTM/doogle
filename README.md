@@ -1,4 +1,7 @@
 # Doogle
+<p align="center">
+  <img src="docs/cover.png" width="400" />
+</p>
 Doogle is the first dog centric search engine that provides random dog photos based on breed. Additionally, it suggests fun activities for you to do as you clearly must be a little bored if you're looking up random dog photos on the internet.
 <br>
 I had lots of fun working on this assignment, and look forward to hearing back!
