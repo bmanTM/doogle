@@ -2,17 +2,15 @@
 <p align="center">
   <img src="docs/cover.png" width="400" />
 </p>
-Doogle is the first dog centric search engine that provides random dog photos based on breed. Additionally, it suggests fun activities for you to do as you clearly must be a little bored if you're looking up random dog photos on the internet.
-<br>
-I had lots of fun working on this assignment, and look forward to hearing back!
+Doogle is the first dog centric search engine that provides random dog photos based on breed. Additionally, it suggests fun activities for you to do as you clearly must be a little bored if you're looking up random dog photos on the internet. This was a coding interview project for my job at PeachPay and I had a lot of fun working on it!
 
 ## Technologies/Concepts used (in no particular order)
-- React: I utilized React for the front end of this web application. I enjoy the ability to concentrate all portions of web design and development inside one language and file type. I'm quite comfortable working with JSX and React components + state changing and event handling.
-- TailwindCSS: I used TailwindCSS for styling components on the frontend. Unlike CSS frameworks like Bootstrap, Tailwind's functional classes allow me to quickly design a fairly comprehensive UI.
-- Websockets: Although not necessary, I utilized koa-websocket to create a websocket address the application connects to for sending real time recommendations as the user types into the search bar.
+- React: Used for the front end of this web application. I enjoy the ability to concentrate all portions of web design and development inside one language and file type. I'm quite comfortable working with JSX and React components + state changing and event handling.
+- TailwindCSS: Due to the time constraints of this process, I chose Tailwind to stylize the application quickly. I enjoy the use of functional classes, I feel this method pairs well with the component based development of React.
+- Websockets: I utilized the koa-websocket package to create a websocket address the application connects to for sending real time recommendations as the user types into the search bar.
 - supertest: The testing library used for testing the backend.
 
-## Starting it up! (READ ME!!!)
+## Starting it up!
 For convenience sake, I've added a bash script called 'run.sh' which will run through the build and deploy process.
 ```sh
 sh run.sh
